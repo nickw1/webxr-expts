@@ -39,17 +39,20 @@ AFRAME.registerComponent('ar-hit-test', {
                 // being mapped)  while the viewer space is relative to our 
                 // current view of it. We want to place the dino in floor
                 // (world) space.
+                // Note the dino will be placed on the plane nearest to the
+                // CENTRE of the screen as this is where the ray is projected
+                // from.
                 const space = this.floorSpace;
 
                 // Make sure there are hit test results and the space has been
                 // intiialised
                 if(hitTestResults.length > 0 && space) {
-                    console.log('have hit(s) and a viewer space');
+                    console.log('have hit(s) and a floor space');
 
                     // get the pose of the hit (position and orientation
                     // relative to a given space)
                     const pose = hitTestResults[0].getPose(space);
-                    const pos = pose.transform.position;
+                    let pos = pose.transform.position;
                     console.log('POSITION from pose (floor space...):');
                     console.log(pos);
 

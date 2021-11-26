@@ -8,14 +8,16 @@
 </head>
 
 <body>
+<!--
 	<a-scene webxr='referenceSpaceType: local-floor; requiredFeatures:hit-test,local-floor; optionalFeatures: dom-overlay, unbounded; overlayElement: #overlay' ar-hit-test>
+-->
+	<a-scene webxr='referenceSpaceType: local-floor; requiredFeatures:hit-test,local-floor' ar-hit-test>
 	 <a-assets timeout="30000">
         <!-- Model source: https://sketchfab.com/3d-models/spinosaurus-2135501583704537907645bf723685e7
              Model author: https://sketchfab.com/VapTor
              Model license: CC Attribution -->
         <a-asset-item id="spinosaurus" src="https://cdn.glitch.com/324a5290-5aa7-4efc-92d6-ae0736433b12%2Fspinosaurus.glb" response-type="arraybuffer"></a-asset-item>
       </a-assets>
-		<div id='overlay' style='position: absolute; top:100px; left:100px; background-color: white; color: black'>overlay</div>
 		<a-entity id="dino" position="-1 0 -2" scale="0.25 0.25 0.25">
 			<a-entity position="0 2.15 0" rotation="0 55 0"
 			gltf-model="#spinosaurus"></a-entity>
