@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<title>A-Frame WebXR test</title>
+<script type='text/javascript' src='dist/bundle.js?STOP_CACHE=8'></script>
+</head>
+
+<body>
+<!--
+	<a-scene webxr='referenceSpaceType: local-floor; requiredFeatures:hit-test,local-floor; optionalFeatures: dom-overlay, unbounded; overlayElement: #overlay'>
+-->
+	<a-scene webxr='referenceSpaceType: local-floor; requiredFeatures:hit-test,local-floor'>
+		<a-entity ar-hit-test></a-entity>
+		<a-box id='box0' position="0 1 -1" material="color: red" scale="0.25 0.25 0.25"></a-box>
+		<a-box id='box1' position="0 1 -2" material="color: green" scale="0.25 0.25 0.25"></a-box>
+		<a-box id='box2' position="0 1 -3" material="color:blue" scale="0.25 0.25 0.25"></a-box>
+	</a-scene>
+</body>
+</html>
