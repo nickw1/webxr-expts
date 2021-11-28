@@ -75,13 +75,14 @@ AFRAME.registerComponent('ar-hit-test', {
                     if(objectHitTestResults.length > 0) {
                         // If we do...
                         const pose1 = objectHitTestResults[0].getPose(this.floorSpace);
-                        console.log(`*** Object hit test results for hit test source ${i}`);
+                        console.log(`**** Object hit test results for hit test source ${i}`);
                         console.log(pose1.transform.position);
                         document.getElementById(`box${i}`).setAttribute('position', {
                             x: pose1.transform.position.x,
                             y: pose1.transform.position.y + 0.125, // cube should rest on ground
                             z: pose1.transform.position.z
                         });
+                        this.objectHitTestSource[i] = null; // no longer needed, we do one hit test per cube
                     }
                 }
             }

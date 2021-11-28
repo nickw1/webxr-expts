@@ -72,13 +72,19 @@ AFRAME.registerComponent('ar-hit-test', {
             if(hitTestResults.length > 0) {
                 // Get pose and position, as the first example
                 const pose = hitTestResults[0].getPose(this.floorSpace);
+                
                 const position = {
                     x: pose.transform.position.x,
                     y: pose.transform.position.y,
                     z: pose.transform.position.z
                 };
+            
+    
                 // Set the reticle's position to the hit position
                 this.el.setAttribute('position', position);
+                console.log('using quaternion...');
+                this.el.object3D.quaternion.copy(pose.transform.orientation); // https://ada.is/basketball-demo/ar-components.js
+                
             }
         }
     },
