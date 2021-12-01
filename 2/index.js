@@ -84,7 +84,8 @@ AFRAME.registerComponent('ar-hit-test', {
                 this.el.setAttribute('position', position);
                 console.log('using quaternion...');
                 this.el.object3D.quaternion.copy(pose.transform.orientation); // https://ada.is/basketball-demo/ar-components.js
-                
+                // this.el.object3D.matrix.copy(pose.transform.matrix);
+                // this.el.object3D.matrixAutoUpdate = false;
             }
         }
     },
