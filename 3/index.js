@@ -28,12 +28,6 @@ AFRAME.registerComponent('ar-hit-test', {
             // Get the XRSession
             this.xrSession = this.el.sceneEl.renderer.xr.getSession();
 
-            // Obtain the viewer reference space and hit test source
-            // (hits are obtained from viewer space) 
-            this.xrSession.requestReferenceSpace('viewer').then( space => {
-                this.viewerSpace = space;
-            });
-
             // Obtain floor space
             console.log('Getting local-floor space...');
             this.xrSession.requestReferenceSpace('local-floor').then( space => {
@@ -64,7 +58,7 @@ AFRAME.registerComponent('ar-hit-test', {
 
     
     tick: function() {
-        if(!this.el.sceneEl.is('ar-mode') || !this.viewerSpace) return;
+        if(!this.el.sceneEl.is('ar-mode')) return;
         if(this.xrSession && this.el.sceneEl.frame && this.floorSpace) {
             const frame = this.el.sceneEl.frame;
             // Loop through all our hit test sources defined above...
@@ -91,7 +85,6 @@ AFRAME.registerComponent('ar-hit-test', {
                         
     makeNull: function() {
         this.xrHitTestSource = null;
-        this.viewerSpace = null;
         this.floorSpace = null;
         this.xrSession = null;
     }
