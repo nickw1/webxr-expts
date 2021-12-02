@@ -4,28 +4,28 @@
 <head>
 <meta charset="utf-8" />
 <title>A-Frame WebXR test</title>
-<script type='text/javascript' src='dist/bundle.js?a=2'></script>
+<script type='text/javascript' src='dist/bundle.js?a=4'></script>
 </head>
 
 <body>
 <!--
-	<a-scene webxr='referenceSpaceType: local-floor; requiredFeatures:hit-test,local-floor; optionalFeatures: dom-overlay, unbounded; overlayElement: #overlay'>
+    <a-scene webxr='referenceSpaceType: local-floor; requiredFeatures:hit-test,local-floor; optionalFeatures: dom-overlay, unbounded; overlayElement: #overlay'>
 -->
-	<a-scene webxr='referenceSpaceType: local-floor; requiredFeatures:hit-test,local-floor'>
-	 <a-assets timeout="30000">
-        <!-- Model source: https://sketchfab.com/3d-models/spinosaurus-2135501583704537907645bf723685e7
-             Model author: https://sketchfab.com/VapTor
-             Model license: CC Attribution -->
+    <a-scene webxr='referenceSpaceType: local-floor; requiredFeatures:hit-test,local-floor'>
+     <a-assets timeout="30000">
+    <!-- Model source: https://sketchfab.com/3d-models/spinosaurus-2135501583704537907645bf723685e7
+         Model author: https://sketchfab.com/VapTor
+         Model license: CC Attribution -->
         <a-asset-item id="spinosaurus" src="https://cdn.glitch.com/324a5290-5aa7-4efc-92d6-ae0736433b12%2Fspinosaurus.glb" response-type="arraybuffer"></a-asset-item>
-	     <a-asset-item id="reticle"
+         <a-asset-item id="reticle"
                       src="reticle.gltf"
                       response-type="arraybuffer"></a-asset-item>
       </a-assets>
-		<a-entity id="dino" position="-1 0 -2" scale="0.25 0.25 0.25">
-			<a-entity position="0 2.15 0" rotation="0 55 0"
-			gltf-model="#spinosaurus"></a-entity>
-		</a-entity>
-		<a-light type="directional"
+        <a-entity id="dino" position="-1 0 -2" scale="0.1 0.1 0.1">
+            <a-entity position="0 2.15 0" rotation="0 55 0"
+            gltf-model="#spinosaurus"></a-entity>
+        </a-entity>
+        <a-light type="directional"
              light="castShadow: true;
                       shadowMapHeight: 1024;
                       shadowMapWidth: 1024;
@@ -36,7 +36,7 @@
              id="light"
              target="dino"
              position="-2 4 2"></a-light>
-		<a-entity ar-hit-test gltf-model="#reticle"></a-entity>
-	</a-scene>
+        <a-entity ar-hit-test gltf-model="#reticle"></a-entity>
+    </a-scene>
 </body>
 </html>

@@ -82,10 +82,9 @@ AFRAME.registerComponent('ar-hit-test', {
     
                 // Set the reticle's position to the hit position
                 this.el.setAttribute('position', position);
-                console.log('using quaternion...');
                 this.el.object3D.quaternion.copy(pose.transform.orientation); // https://ada.is/basketball-demo/ar-components.js
-                // this.el.object3D.matrix.copy(pose.transform.matrix);
-                // this.el.object3D.matrixAutoUpdate = false;
+                document.getElementById('dino').object3D.quaternion.copy(pose.transform.orientation);
+                
             }
         }
     },
